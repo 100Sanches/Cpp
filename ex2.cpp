@@ -4,22 +4,22 @@
 using namespace std;
 
 //função que percorre a string e analisa os caracteres.
-int countunderscores(string s) {
+int contaparenteses(string str) {
 
   //contadores de parenteses que abrem e que fecham.
   int abre = 0;
   int fecha = 0;
   
   //laço que percorre a string.
-  for (int i = 0; i < s.size(); i++){
+  for (int i = 0; i < str.size(); i++){
 
     //comperação para ver se o caracter é um parenteses que abre.
-    if (s[i] == '(') {
+    if (str[i] == '(') {
         abre++;
     }
 
     //comperação para ver se o caracter é um parenteses que fecha.
-    if (s[i] == ')') {
+    if (str[i] == ')') {
         fecha++;
     }
   }
@@ -36,6 +36,6 @@ int countunderscores(string s) {
 
 // Código principal que chama as funções e declara a string que vai ser analizada.
 int main(){
-    std::string s = "(hello_world)";
-    cout << "Saida: " << countunderscores(s);
+    std::string str = "(hello_world)";
+    cout << "Saida: " << contaparenteses(str);
 }
