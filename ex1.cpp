@@ -60,7 +60,7 @@ vector<int> menorelementoanterior(vector<int>& arr,int n){
 }
 
 // Função para obter a área máxima considerando cada linha como a base do histograma
-int getMaxArea(vector<int>& arr, int n){
+int pegarMaxArea(vector<int>& arr, int n){
 
 	vector<int> direita(n);
 	direita = proximomenorelemento(arr, n);
@@ -85,10 +85,10 @@ int getMaxArea(vector<int>& arr, int n){
 }
 
 // Função para calcular o maximo da area do retangulo
-int maxRectangleArea(vector<vector<int> >& M,int n, int m){
+int maxAreaRetangulo(vector<vector<int> >& M,int n, int m){
 
 	// Calcule a área máxima para a primeira linha
-	int area = getMaxArea(M[0], m);
+	int area = pegarMaxArea(M[0], m);
 	int maxarea = area;
 
 	for (int i = 1; i < n; i++) {
@@ -103,7 +103,7 @@ int maxRectangleArea(vector<vector<int> >& M,int n, int m){
 				M[i][j] = 0;
 			}
 		}
-		maxarea = max(maxarea,getMaxArea(M[i], m));
+		maxarea = max(maxarea,pegarMaxArea(M[i], m));
 	}
 	return maxarea;
 }
@@ -118,6 +118,6 @@ int main(){
 		{ 1, 0, 0, 1, 0 },
 	};
 
-	cout << maxRectangleArea(amt, N, M);
+	cout << maxAreaRetangulo(amt, N, M);
 	return 0;
 }
